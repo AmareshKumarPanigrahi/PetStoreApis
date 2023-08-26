@@ -2,6 +2,7 @@ package api.test;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import api.endpoints.UserCrudOperations;
 import api.payload.UserPayload;
@@ -29,8 +30,7 @@ public class DataDrivenTesting {
 	
 		Response res = UserCrudOperations.createUser(up);
 		
-		int statuscode = res.getStatusCode();
-		System.out.println(statuscode);
+		res.then().log().all();
 		
 	}
 }
